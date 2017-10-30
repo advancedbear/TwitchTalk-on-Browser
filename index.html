@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1, maximum-scale=1">
+	<style type="text/css">
+		@import url(index.css) screen and (min-width: 481px);
+		@import url(index_s.css) screen and (max-width: 480px);
+	</style>
+		<title>Twitch Talk on Browser</title>
+		<link href="https://fonts.googleapis.com/css?family=Passion+One" rel="stylesheet">
+		<script src="http://code.jquery.com/jquery-2.2.4.min.js"></script>
+		<script src="http://cdn.tmijs.org/js/latest/1.x/tmi.min.js"></script>
+		<script src="js/Twitch.min.js"></script>
+		<script src="js/script.js"></script>
+	</head>
+	<body>
+		<div class="title">
+			Twitch Talk on Browser 
+		</div>
+
+		<div class="description">
+			<div class="button_wrapper">
+				<button onclick="loginTwitch()" id="loginTwitch"><img src="img/Login.png" id="button_img"></button>
+				<p id="username"></p>
+			</div>
+		</div>
+		<div class="main">
+			<form name="form">
+				Channel: <input type="text" id="channel"><br />
+				<button onclick="Connect()" id="connButton">Connect</button>
+			</form>
+		</div>
+		<div class="chatlog">
+			<table class="loglist">
+				<tr><th style="width: 15%;">Time</th><th style="width: 25%;">From</th><th style="width: 60%;">Message</th></tr>
+			</table>
+		</div>
+	</body>
+</html>
