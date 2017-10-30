@@ -18,7 +18,7 @@ $(document).ready(function() {
 			$('#loginTwitch').attr("onclick", "");
             console.log("oauth:" + token);
         } else {
-			$('#connButton').attr('disabled', 'true');
+			$('#connButton').prop('disabled', true);
 		}
 	});
 });
@@ -71,7 +71,7 @@ var Connect = function(){
 
 	client.connect().then(function(data) {
 	}).catch(function(err) {
-		$('#connButton').attr('disabled', 'false');
+		$('#connButton').prop('disabled', false);
 		$('#connButton').text("Connect")
 		alert("Connection failed.")
 	});;
