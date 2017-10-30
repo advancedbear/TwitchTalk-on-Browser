@@ -37,7 +37,8 @@ var Connect = function(){
 	var channel = $('#channel').val();
 	var tmi_options = {
         connection: {
-            reconnect: true
+			reconnect: true,
+			secure: true
         },
         identity: {
             username: user.name,
