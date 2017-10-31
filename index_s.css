@@ -10,19 +10,19 @@ body {
     background: #D1C4E9;
 }
 
-input, #connButton {
+#connButton, #options {
 	float:center;
 	width:100%;
 	height:48px;
 	margin-top:5px;
-	
-	}
+}
 
 .main, .description, .chatlog {
 	width:100%;
 	background:#F2F2F2;
 	margin:0 auto;
 	border: 1px solid #CCCCCC;
+	text-align: center;
 }
 
 .title {
@@ -43,6 +43,7 @@ input, #connButton {
 #channel {
 	border: 1px solid #212121;
 	padding: 4px;
+	height: 48px;
 	color: #555;
 	background: #FFFFFF;
 	border-radius: 5px;
@@ -97,6 +98,24 @@ button img {
 
 #username {
 	display: none;
+}
+
+.options {
+	display: none;
+	padding: 1em;
+	width: 100%;
+	border: solid 1px #CCC;
+	background-color: #C3C3C3;
+	box-sizing: border-box;
+}
+
+input[type="range"]{
+	width: 100%;
+}
+
+.testButton{
+	height: 48px;
+	width: 45%;
 }
 
 .loglist {

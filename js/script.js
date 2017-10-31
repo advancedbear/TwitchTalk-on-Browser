@@ -5,6 +5,23 @@ var user = null;
 var uttr = new SpeechSynthesisUtterance();
 
 $(document).ready(function() {
+	$("#volume_val").text(parseFloat($("#volume").val()).toFixed(1));
+	$("#speed_val").text(parseFloat($("#speed").val()).toFixed(1));
+	$("#pitch_val").text(parseFloat($("#pitch").val()).toFixed(1));
+
+	$('#volume').on('input', function(){
+		$("#volume_val").text(parseFloat($(this).val()).toFixed(1));
+		uttr.volume = parseFloat($(this).val());
+	})
+	$('#speed').on('input', function(){
+		$("#speed_val").text(parseFloat($(this).val()).toFixed(1));
+		uttr.rate = parseFloat($(this).val());
+	})
+	$('#pitch').on('input', function(){
+		$("#pitch_val").text(parseFloat($(this).val()).toFixed(1));
+		uttr.pitch = parseFloat($(this).val());
+	})
+
     Twitch.init({clientId: client_id}, function(err, stat) {
         if (stat.authenticated) {
 			token = Twitch.getToken();
@@ -22,6 +39,7 @@ $(document).ready(function() {
 		}
 	});
 });
+
 
 var loginTwitch = function(){
     Twitch.login({
@@ -80,3 +98,23 @@ var Connect = function(){
 var isEnglish = function(message){
     return (message.match("^(.*[｡-ﾟ０-９ａ-ｚＡ-Ｚぁ-んァ-ヶ亜-黑一-龠々ー].*)*$")) ? false : true ;
 };
+
+var enVoiceTest = function(){
+	uttr.text="This is the test message. Please check the voice quality.";
+	uttr.lang="en-US";
+	speechSynthesis.speak(uttr);
+}
+
+var jpVoiceTest = function(){
+	uttr.text="これはテストメッセージです。音声の品質を確認して下さい。";
+	uttr.lang="ja-JP";
+	speechSynthesis.speak(uttr);
+}
+
+var openOptions = function(){
+	if($('.options').css('display')=='none'){
+		$('.options').slideDown();
+	} else {
+		$('.options').slideUp();
+	}
+}
