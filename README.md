@@ -14,7 +14,7 @@ Ofcourse you can use this with your smartphone.
 
 ## How to use
 1. Access https://advancedbear.github.io/TwitchTalk-on-Browser/
-1. Click ![https://raw.githubusercontent.com/advancedbear/TwitchTalk-on-Browser/master/img/Login.png](ConnectwithTwitch) Button.
+1. Click ![Connect with Twitch](img/Login.png) Button.
 1. Login as your Twitch.tv account.
 1. Enter a channel ID which you want to listen.
 1. Press the "Connect" button.
