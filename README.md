@@ -26,8 +26,7 @@ You can change "Volume", "Speed" and "Pitch".
 If you want to check the voice, press test buttons.
 
 **!!-Caution-!!**  
-All of the settings won't be saved.   
-If you reload the page, all settings will be reset.
+All of the settings will be reset when you close the browser.
 
 ## Information
 ### Used Modules

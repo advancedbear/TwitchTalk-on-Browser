@@ -5,6 +5,10 @@ var user = null;
 var uttr = new SpeechSynthesisUtterance();
 
 $(document).ready(function() {
+	if(sessionStorage.volume!=null) $("#volume").val(sessionStorage.volume);
+	if(sessionStorage.speed!=null) $("#speed").val(sessionStorage.speed);
+	if(sessionStorage.pitch!=null) $("#pitch").val(sessionStorage.pitch);
+
 	$("#volume_val").text(parseFloat($("#volume").val()).toFixed(1));
 	$("#speed_val").text(parseFloat($("#speed").val()).toFixed(1));
 	$("#pitch_val").text(parseFloat($("#pitch").val()).toFixed(1));
@@ -12,14 +16,17 @@ $(document).ready(function() {
 	$('#volume').on('input', function(){
 		$("#volume_val").text(parseFloat($(this).val()).toFixed(1));
 		uttr.volume = parseFloat($(this).val());
+		sessionStorage.volume = parseFloat($(this).val());
 	})
 	$('#speed').on('input', function(){
 		$("#speed_val").text(parseFloat($(this).val()).toFixed(1));
 		uttr.rate = parseFloat($(this).val());
+		sessionStorage.speed = parseFloat($(this).val());
 	})
 	$('#pitch').on('input', function(){
 		$("#pitch_val").text(parseFloat($(this).val()).toFixed(1));
 		uttr.pitch = parseFloat($(this).val());
+		sessionStorage.pitch = parseFloat($(this).val());
 	})
 
     Twitch.init({clientId: client_id}, function(err, stat) {
