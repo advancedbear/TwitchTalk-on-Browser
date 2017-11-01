@@ -79,7 +79,7 @@ var Connect = function(){
 		time = hour+":"+min;
 		let from = userstate["username"];
 		var uri = "(https?|ftp)(:\/\/[-_.!~*\'()a-zA-Z0-9;\/?:\@&=+\$,%#]+)";
-		$('.loglist').append("<tr><td>"+time+"</td><td>"+from+"</td><td>"+message+"</td></tr>");
+		$('.loglist').append("<tr><td>"+time+"</td><td>"+from+"</td><td>"+escapeHTML(message)+"</td></tr>");
 		message = message.replace(new RegExp(uri, 'g'), ';webURL;');
 		if(isEnglish(message)){
 			uttr.text = message;
@@ -132,3 +132,34 @@ var openOptions = function(){
 		$('.options').slideUp();
 	}
 }
+
+var escapeHTML = function (str) {
+    return str
+            .replace(/&/g, '&amp;')
+            .replace(/</g, '&lt;')
+            .replace(/>/g, '&gt;')
+            .replace(/"/g, '&quot;')
+            .replace(/'/g, '&#39;');
+};
+
+var escapeJs = function (str) {
+    return str
+            .replace(/\\/g, '\\\\')
+            .replace(/'/g, "\\'")
+            .replace(/"/g, '\\"')
+            .replace(/\//g, '\\/')
+            .replace(/</g, '\\x3c')
+            .replace(/>/g, '\\x3e')
+            .replace(/(0x0D)/g, '\r')
+            .replace(/(0x0A)/g, '\n');
+};
+
+var unEscapeJs = function (str) {
+    return str
+            .replace(/\\'/g, "'")
+            .replace(/\\"/g, '"')
+            .replace(/\\\//g, '/')
+            .replace(/\\x3c/g, '<')
+            .replace(/\\x3e/g, '>')
+            .replace(/\\\\/g, '\\');
+};
