@@ -11,6 +11,7 @@
 		<link href="https://fonts.googleapis.com/css?family=Passion+One" rel="stylesheet">
 		<script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
 		<script src="https://cdn.tmijs.org/js/latest/1.x/tmi.min.js"></script>
+		<script src="js/v1_1.js"></script>
 		<script src="js/Twitch.min.js"></script>
 		<script src="js/script.js"></script>
 	</head>
@@ -19,10 +20,11 @@
 			Twitch Talk on Browser 
 		</div>
 		<div class="description">
+			<p id="username"></p>
 			<div class="button_wrapper">
 				<button onclick="loginTwitch()" id="loginTwitch"><img src="img/Login.png" id="button_img"></button>
-				<p id="username"></p>
 			</div>
+			<div id="twitch-embed"></div>
 		</div>
 		<div class="main">
 			<form name="form">

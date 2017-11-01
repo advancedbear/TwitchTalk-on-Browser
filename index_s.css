@@ -25,6 +25,10 @@ body {
 	text-align: center;
 }
 
+#twitch-embed {
+	display: none;
+}
+
 .title {
 	font-family: 'Passion One', cursive;
     color: #6441A4;

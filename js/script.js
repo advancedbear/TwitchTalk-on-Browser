@@ -31,16 +31,18 @@ $(document).ready(function() {
 
     Twitch.init({clientId: client_id}, function(err, stat) {
         if (stat.authenticated) {
+			var embed;
 			token = Twitch.getToken();
 			Twitch.api({method: 'user'}, function(error, userstatus){
 				user = userstatus;
-				console.log(user);
+				console.log(user.name);
 				$('#username').text("Logged in as \""+user.name+"\"");
+				$('#username').attr('user-id', user.name);
 				$('#username').show();
 			});
 			$('#button_img').attr("src", "img/Loggedin.png");
 			$('#loginTwitch').attr("onclick", "");
-            console.log("oauth:" + token);
+			console.log("oauth:" + token);
         } else {
 			$('#connButton').prop('disabled', true);
 		}
@@ -93,6 +95,14 @@ var Connect = function(){
 		}
 
 	});
+
+	let wd = $('.description').width();
+	let iframe = "<iframe src=\"http://player.twitch.tv/?channel="+channel+"&muted=true\""
+		+ " height=\""+wd*.75+"\" width=\""+ wd +"\" frameborder=\"0\""
+		+ " scrolling=\"no\" allowfullscreen=\"false\"></iframe>"
+	$('#twitch-embed').append(iframe);
+	$('.button_wrapper').css('display', 'none');
+	$('#twitch-embed').slideDown();
 
 	client.connect().then(function(data) {
 	}).catch(function(err) {
