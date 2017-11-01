@@ -94,7 +94,7 @@ var Connect = function(){
 	});
 
 	let wd = $('.description').width();
-	let iframe = "<iframe src=\"http://player.twitch.tv/?channel="+channel+"&muted=true\""
+	let iframe = "<iframe src=\"https://player.twitch.tv/?channel="+channel+"&muted=true\""
 		+ " height=\""+wd*.75+"\" width=\""+ wd +"\" frameborder=\"0\""
 		+ " scrolling=\"no\" allowfullscreen=\"false\"></iframe>"
 	$('#twitch-embed').append(iframe);
