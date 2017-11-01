@@ -35,14 +35,12 @@ $(document).ready(function() {
 			token = Twitch.getToken();
 			Twitch.api({method: 'user'}, function(error, userstatus){
 				user = userstatus;
-				console.log(user.name);
 				$('#username').text("Logged in as \""+user.name+"\"");
 				$('#username').attr('user-id', user.name);
 				$('#username').show();
 			});
 			$('#button_img').attr("src", "img/Loggedin.png");
 			$('#loginTwitch').attr("onclick", "");
-			console.log("oauth:" + token);
         } else {
 			$('#connButton').prop('disabled', true);
 		}
@@ -60,7 +58,6 @@ var loginTwitch = function(){
 var Connect = function(){
 	$('#connButton').attr('disabled', 'true');
 	$('#connButton').text("Connected!")
-	console.log(user.name);
 	var channel = $('#channel').val();
 	var tmi_options = {
         connection: {
