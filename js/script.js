@@ -4,9 +4,8 @@ var user = null;
 
 var uttr = new SpeechSynthesisUtterance();
 
-location.href = location.href.replace(/\?.*$/,"")
-
 $(document).ready(function() {
+	location.hash = '';
 	if(sessionStorage.volume!=null) $("#volume").val(sessionStorage.volume);
 	if(sessionStorage.speed!=null) $("#speed").val(sessionStorage.speed);
 	if(sessionStorage.pitch!=null) $("#pitch").val(sessionStorage.pitch);
