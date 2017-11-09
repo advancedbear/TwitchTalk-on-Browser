@@ -5,7 +5,6 @@ var user = null;
 var uttr = new SpeechSynthesisUtterance();
 
 $(document).ready(function() {
-	location.hash = '';
 	if(sessionStorage.volume!=null) $("#volume").val(sessionStorage.volume);
 	if(sessionStorage.speed!=null) $("#speed").val(sessionStorage.speed);
 	if(sessionStorage.pitch!=null) $("#pitch").val(sessionStorage.pitch);
@@ -42,6 +41,7 @@ $(document).ready(function() {
 			});
 			$('#button_img').attr("src", "img/Loggedin.png");
 			$('#loginTwitch').attr("onclick", "");
+			location.hash = '';
         } else {
 			$('#connButton').prop('disabled', true);
 		}
